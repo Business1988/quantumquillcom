@@ -1,16 +1,16 @@
 @import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap");
 
 :root {
-  --bg: #f5efe5;
-  --paper: #fcf8f2;
-  --panel: #f0e0d0;
-  --ink: #2e1a1f;
-  --muted: #746165;
-  --line: rgba(46, 26, 31, 0.14);
-  --accent: #6f2037;
-  --accent-soft: #a96858;
-  --warm: #c18a56;
-  --shadow: 0 22px 60px rgba(46, 26, 31, 0.08);
+  --bg: #eef0f8;
+  --paper: #fafbff;
+  --panel: #e3e7f6;
+  --ink: #252143;
+  --muted: #666284;
+  --line: rgba(37, 33, 67, 0.14);
+  --accent: #5f4bb6;
+  --accent-soft: #8d79d9;
+  --warm: #4fb0c6;
+  --shadow: 0 22px 60px rgba(37, 33, 67, 0.08);
   --max: 1160px;
 }
 
@@ -18,8 +18,8 @@
 body {
   margin: 0;
   background:
-    radial-gradient(circle at top left, rgba(193, 138, 86, 0.14), transparent 24%),
-    linear-gradient(180deg, rgba(111, 32, 55, 0.06), transparent 24%),
+    radial-gradient(circle at top left, rgba(79, 176, 198, 0.16), transparent 24%),
+    linear-gradient(180deg, rgba(95, 75, 182, 0.08), transparent 24%),
     var(--bg);
   color: var(--ink);
   font-family: "Inter", sans-serif;
@@ -33,7 +33,7 @@ h1, h2, h3 { margin: 0; font-family: "Cormorant Garamond", serif; line-height: 0
   top: 0;
   z-index: 20;
   border-bottom: 1px solid var(--line);
-  background: rgba(245, 239, 229, 0.9);
+  background: rgba(238, 240, 248, 0.9);
   backdrop-filter: blur(14px);
 }
 .nav-shell {
@@ -109,7 +109,7 @@ h1, h2, h3 { margin: 0; font-family: "Cormorant Garamond", serif; line-height: 0
 .column-card { padding: 16px; background: var(--paper); border-top: 3px solid var(--accent); }
 .column-card strong { display: block; margin-bottom: 8px; }
 .pull-quote {
-  padding: 26px; border-radius: 24px; background: linear-gradient(180deg, var(--accent), #4b1628);
+  padding: 26px; border-radius: 24px; background: linear-gradient(180deg, var(--accent), #3d3178);
   color: #fff7f1;
 }
 .pull-quote p, .pull-quote .eyebrow { color: rgba(255, 247, 241, 0.82); }
