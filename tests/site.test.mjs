@@ -1,0 +1,40 @@
+import test from "node:test";
+import assert from "node:assert/strict";
+import fs from "node:fs";
+import path from "node:path";
+
+const root = process.cwd();
+const pages = ["index.html", "journal.html", "capabilities.html", "iaa-model.html", "contact.html", "privacy.html", "support.html"];
+const read = (page) => fs.readFileSync(path.join(root, page), "utf8");
+
+for (const page of pages) {
+  test(`${page} exists`, () => {
+    assert.equal(fs.existsSync(path.join(root, page)), true);
+  });
+}
+
+test("all pages include shared assets", () => {
+  for (const page of pages) {
+    const html = read(page);
+    assert.match(html, /assets\/css\/styles\.css/i);
+    assert.match(html, /assets\/js\/site\.js/i);
+  }
+});
+
+test("homepage reflects journal styling and mobile software positioning", () => {
+  const html = read("index.html");
+  assert.match(html, /QuantumQuillCom/i);
+  assert.match(html, /mobile software/i);
+  assert.match(html, /IAA monetization/i);
+  assert.match(html, /journal|publication|editorial/i);
+});
+
+test("contact page contains all inboxes and names", () => {
+  const html = read("contact.html");
+  assert.match(html, /vip@quantumquillcom\.com/i);
+  assert.match(html, /Premier Client Desk/i);
+  assert.match(html, /business@quantumquillcom\.com/i);
+  assert.match(html, /Business Partnerships/i);
+  assert.match(html, /support@quantumquillcom\.com/i);
+  assert.match(html, /Customer Support Team/i);
+});
